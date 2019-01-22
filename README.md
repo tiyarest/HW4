@@ -1,8 +1,8 @@
 # AndroidLessonRestAPISolution
 
-练习一：
+##**练习一：**
 
-Been里定义一个类来接受调用接口的返回的json值。  
+**Been里定义一个类来接受调用接口的返回的json值。  **
 
 @SerializedName("breeds")  
 
@@ -16,11 +16,11 @@ private String id;
 
 private  String url;  
 
-定义一个接口实现get请求  
+**定义一个接口实现get请求  **
 
 @GET("search?limit=5") Call<List<Cat>>randomCat();  
   
-实例化一个Retrofit，异步Retrofit网络通信不用开启新的线程，可以不用考虑子线程不能修改ui。  
+**实例化一个Retrofit，异步Retrofit网络通信不用开启新的线程，可以不用考虑子线程不能修改ui。  **
 
 
                 Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.108.10.39:8080/")  
@@ -29,7 +29,7 @@ private  String url;
                 
                 .build();  
                 
-调用get请求接口，同时更新ui  
+**调用get请求接口，同时更新ui  **
  
 
                 retrofit.create(IMiniDouyinService.class)  
@@ -54,11 +54,11 @@ private  String url;
                     }  
                     
                 });  
-  练习二：  
+ ##**练习二：**  
   
-网络Get请求接口调用方法如练习一。
+**网络Get请求接口调用方法如练习一。**
 
-网络Get请求接口调用如上：  
+**网络Get请求接口调用如上：**  
 
 @Multipart
     @POST("minidouyin/video/")
