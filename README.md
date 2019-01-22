@@ -30,10 +30,11 @@ private  String url;
                 .build();  
                 
 调用get请求接口，同时更新ui  
+ 
 
-retrofit.create(IMiniDouyinService.class).createVideo("3120181028","tianye",getMultipartFromUri("pic",mSelectedImage),getMultipartFromUri("vid",mSelectedVideo)).  
-
-                enqueue(new Callback<PostVideoResponse>() {  
+                retrofit.create(IMiniDouyinService.class)  
+                .createVideo("3120181028","tianye", getMultipartFromUri("pic",mSelectedImage),getMultipartFromUri("vid",mSelectedVideo)) 
+                . enqueue(new Callback<PostVideoResponse>() {  
                 
                     @Override public void onResponse(Call<PostVideoResponse> call, Response<PostVideoResponse> response) {  
                     
