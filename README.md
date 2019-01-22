@@ -22,9 +22,8 @@ private  String url;
   
 实例化一个Retrofit，异步Retrofit网络通信不用开启新的线程，可以不用考虑子线程不能修改ui。  
 
-Retrofit retrofit = new Retrofit.Builder()  
 
-                .baseUrl("http://10.108.10.39:8080/")  
+                Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.108.10.39:8080/")  
                 
                 .addConverterFactory(GsonConverterFactory.create())  
                 
