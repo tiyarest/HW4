@@ -54,6 +54,31 @@ private  String url;
                     }  
                     
                 });  
-                
+  练习二：  
+  
+网络Get请求接口调用方法如练习一。
+
+网络Get请求接口调用如上：  
+
+@Multipart
+    @POST("minidouyin/video/")
+    Call<PostVideoResponse> createVideo(@Query("studengt_id")String studengtId ,
+                                        @Query("user_name")String userName ,@Part MultipartBody.Part cover_image,
+                                        @Part MultipartBody.Part video);
+  
+Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl("http://10.108.10.39:8080/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build();
+
+retrofit.create(IMiniDouyinService.class).createVideo("3120181028","tianye",getMultipartFromUri("pic",mSelectedImage),getMultipartFromUri("vid",mSelectedVideo)).
+        enqueue(new Callback<PostVideoResponse>() {
+            @Override public void onResponse(Call<PostVideoResponse> call, Response<PostVideoResponse> response) {
+                Toast.makeText(Solution2C2Activity.this,"post vedio seccess",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override public void onFailure(Call<PostVideoResponse> call, Throwable t) {
+            }
+        });
 
 
