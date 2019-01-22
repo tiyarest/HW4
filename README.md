@@ -1,8 +1,8 @@
 # AndroidLessonRestAPISolution
 
-##**练习一：**
+## ** 练习一：**
 
-**Been里定义一个类来接受调用接口的返回的json值。  **
+** Been里定义一个类来接受调用接口的返回的json值。  **
 
 @SerializedName("breeds")  
 
