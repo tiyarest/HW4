@@ -65,14 +65,21 @@ private  String url;
                                         @Query("user_name")String userName ,@Part MultipartBody.Part cover_image,
                                         @Part MultipartBody.Part video);
   
-Retrofit retrofit = new Retrofit.Builder()
+    Retrofit retrofit = new Retrofit.Builder()
         .baseUrl("http://10.108.10.39:8080/")
         .addConverterFactory(GsonConverterFactory.create())
         .build();
 
-retrofit.create(IMiniDouyinService.class).createVideo("3120181028","tianye",getMultipartFromUri("pic",mSelectedImage),getMultipartFromUri("vid",mSelectedVideo)).
-        enqueue(new Callback<PostVideoResponse>() {
-            @Override public void onResponse(Call<PostVideoResponse> call, Response<PostVideoResponse> response) {
+    retrofit.create(IMiniDouyinService.class)   
+
+       .createVideo("3120181028","tianye",getMultipartFromUri("pic",mSelectedImage)  
+      
+       ,getMultipartFromUri("vid",mSelectedVideo))  
+       
+       .enqueue(new Callback<PostVideoResponse>() {  
+  
+            @Override public void onResponse(Call<PostVideoResponse> call, Response<PostVideoResponse> response) {  
+  
                 Toast.makeText(Solution2C2Activity.this,"post vedio seccess",Toast.LENGTH_SHORT).show();
             }
 
